@@ -1,0 +1,45 @@
+.card {
+  color: #3f556b;
+  max-width: 340px;
+  height: 370px;
+  background: #dee6ee;
+  box-shadow: 0px 3px 6px 0px gray;
+  padding: 4px 12px 5px 15px;
+  border-radius: 2px;
+  margin: 10px;
+}
+.card:hover {
+  transition: 1s ease-in;
+  /* transform: scale(1.1); */
+}
+.card p {
+  padding: 0;
+}
+.jobTitle {
+  font-size: 19px;
+  color: #3f556b;
+  padding-top: 15px;
+  font-weight: bold;
+}
+.companyDetails {
+  font-size: 15.7px;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #636e72;
+}
+
+.deadline {
+  color: #2980b9;
+  font-size: 16px;
+}
+.paragraph {
+  font-size: 14px;
+}
+
+/* Style on ipad */
+@media screen and (min-width: 768px) {
+  .card {
+    width: 100%;
+  }
+}

@@ -1,0 +1,31 @@
+.SearchBar {
+  border: 2px solid #34495e;
+  display: flex;
+  margin: 30px 70px;
+  border-radius: 10px;
+  max-width: 400px;
+}
+.SearchBar input {
+  border: none;
+  margin: 5px;
+  flex-grow: 1;
+  height: 25px;
+  background-color: transparent;
+  padding-left: 10px;
+}
+.SearchBar input:focus {
+  outline: none;
+}
+.SearchBar button {
+  background-color: #096691;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  width: 90px;
+}
+.SearchBar button:active {
+  background-color: #fff;
+  color: #096691;
+  border: 2px solid #34495e;
+}

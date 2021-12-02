@@ -1,0 +1,44 @@
+.buttonfilled {
+  margin: 30px;
+}
+.buttonfilled button {
+  background-color: #096691;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  /* min-width: 100%; */
+  height: 33px;
+}
+.buttonfilled button:active {
+  background-color: #fff;
+  color: #096691;
+  border: 2px solid #096691;
+}
+
+.buttonOutlined {
+  margin: 5px;
+}
+
+.buttonOutlined button {
+  border: 2px solid #096691;
+
+  color: #096691;
+  font-weight: 600;
+  border-radius: 6px;
+  /* border: none; */
+  /* width: 100%; */
+  height: 33px;
+}
+.buttonOutlined button:hover {
+  /* border: 2px solid #096691; */
+  color: #fff;
+  background-color: #096691;
+  
+}
+.buttonOutlined button:active {
+  /* border: 2px solid #096691; */
+  color: #096691;
+  background-color: #fff;
+  
+}

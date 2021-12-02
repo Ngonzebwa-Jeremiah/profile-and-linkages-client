@@ -1,0 +1,29 @@
+.projectcards { 
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 30px;
+  padding-bottom: 30px;
+} 
+.projectcard:hover{
+  cursor:pointer;
+}
+.img_container{
+  width: 250px;
+}
+.img{
+vertical-align: middle; 
+width: 100%;
+} 
+
+ .title{
+   margin-top: 10px; 
+   font-weight: bold;
+   text-align: center;
+   font-size: 20px;
+ }
+ .description{ 
+   text-align: justify;
+   font-size: 18px;
+   line-height: 1.2;  
+   padding: 0 2px;
+ }

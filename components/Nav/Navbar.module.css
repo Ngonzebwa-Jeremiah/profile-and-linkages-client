@@ -1,0 +1,189 @@
+.navbar {
+  height: 12vh;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 0.75rem;
+  position:sticky;
+  background-color: #fff;
+  z-index: 10;
+  box-shadow: 0px 0px 8px 0px #000000;
+  font-size: 20px;
+} 
+.links {
+  display: flex; 
+}
+.navlink {
+  list-style: none;
+  margin: 0 1.5rem;   
+  font-weight: 400;
+  font-size: 25px;
+  color: black;
+}
+.navlink:hover, .active{
+  color: #096691;
+} 
+
+.user{
+display: flex;
+align-items: center; 
+/* color: #636E72;  */
+justify-content: center;
+/* border: 2px solid black; */
+}
+ 
+.img{      
+  border-radius: 50%; 
+  display: inline;  
+}
+ .menu{  
+    line-height: 20px;
+    position: absolute;
+    width: max-content;
+    height: fit-content;
+    /* background: #096691 ;  */
+    background: #096691  ; 
+
+    top: 80px;  
+    right: 100px;
+    color: #fff;
+    padding:10px;  
+    z-index: 100;
+ } 
+ .menuitem:hover{
+   color:#D9E0E8
+ }
+
+ .name{
+   font-size: 22px;
+ }
+
+
+@media screen and (max-width:786px) {
+  .navlink { 
+  margin: 0 .5rem;   
+  font-weight: 400;
+  font-size: 20px; 
+}
+.name{
+  display: none;
+}  
+.user{
+  margin-left:15px;
+}
+} 
+
+ @media screen and (max-width: 480px) {
+   .navlink { 
+  margin: 0 .2rem;   
+  font-weight: 400;
+  font-size: 16px; 
+} 
+ 
+.user{
+  margin-left:20px;
+}
+ 
+}
+
+/* Other CSS */
+.Navigation {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.activeLink {
+  color: var(--main-blue) !important;
+}
+
+.Navigation .nav-item .nav-link:hover {
+  color: var(--main-blue);
+}
+
+.Navigation header {
+  background: rgba(242, 235, 233, 0.6);
+  transition: all 0.5s;
+  width: 100%;
+}
+.Navigation header .h-btn {
+  background: var(--main-blue);
+  border-radius: 0;
+}
+
+@media screen and (min-width: 1000px) {
+  .Navigation header .h-btn {
+    margin-left: 100px;
+  }
+}
+
+.Navigation .container {
+  max-width: 1238px !important;
+  overflow: hidden !important;
+}
+
+.Navigation header {
+  background: rgb(247 243 242);
+  transition: all 0.5s;
+}
+
+.Navigation .jj:hover {
+  color: var(--main-blue) !important;
+}
+
+.Navigation header .h-btn {
+  background: var(--main-blue);
+  border-radius: 0;
+}
+
+@media screen and (min-width: 1000px) {
+  .Navigation header .h-btn {
+    margin-left: 130px;
+  }
+}
+
+.Navigation .container {
+  max-width: 1238px;
+  overflow: hidden;
+}
+
+.Navigation .heading-title {
+  padding: 4rem 0 7rem 0 !important;
+}
+
+.Navigation header {
+  transition: all 0.5s;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.Navigation header .h-btn {
+  background: var(--main-blue);
+  border-radius: 0;
+}
+
+@media screen and (min-width: 1000px) {
+  .Navigation header .h-btn {
+    margin-left: 100px;
+  }
+}
+
+.Navigation .custom-btn {
+  background-color: var(--main-blue);
+  padding: 8px 20px !important;
+  /*text-align: center;*/
+  color: #ffff !important;
+  display: inline-block;
+}
+
+#enrolldiv {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav #hidden{
+  display: block;
+}

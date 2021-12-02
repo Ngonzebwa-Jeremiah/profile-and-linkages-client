@@ -1,0 +1,31 @@
+.profileHeader{ 
+padding:20px;
+display: flex; 
+align-items: flex-end;
+justify-content: flex-end;
+/* border: 2px solid red; */
+margin: auto auto;
+max-width: 1400px;
+z-index: -1;
+ }
+
+ .details{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+ float: left;
+ text-align: right;
+ width: 70%;
+ margin-right: 20px;
+ }
+
+ .img{ 
+  vertical-align: middle;
+  
+ }
+
+ .p{
+   line-height: 1;
+   color:#096691;
+   font-weight: bold;
+ }

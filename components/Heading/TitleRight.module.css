@@ -1,0 +1,22 @@
+.left_Title {
+  /* width: 100%; */
+  margin: 0;
+  padding: 0;
+  height: 40px;
+}
+.left_Title h3 {
+  color: #096691;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.left_Title span {
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.left_Title_icon {
+  font-size: 2rem;
+  color: #a82e2e;
+}
