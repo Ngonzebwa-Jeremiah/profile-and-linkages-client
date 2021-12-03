@@ -1,7 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import "./Button.css";
-import Link from 'next/link';
-
 
 
 export function SimplerButton(props) {
@@ -21,12 +20,12 @@ export function ButtonOutlined(props) {
     return (
         <div className="buttonOutlined"onClick={props.onClick}>
              <Link to={props.url} target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}>
-                {/* <a >  */}
+           
                 <button>
           
                 {props.text}
                 </button>
-                {/* </a> */}
+            
             </Link>
         </div>
     )
