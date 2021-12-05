@@ -1,0 +1,13 @@
+.body{
+    width: 100%;
+}
+.container{
+    width: 70%;
+    margin: 6% auto;
+    display: flex;
+    height: 400px;
+    justify-content: space-around;
+}
+.mb-2{
+    display: flex;
+}
