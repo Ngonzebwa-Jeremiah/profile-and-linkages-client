@@ -1,4 +1,4 @@
 export const Urls = {
-    testUrl:"http://localhost:4000",
-    baseUrl:"https://linkages-profiling-api.herokuapp.com"
+    baseUrl:"http://localhost:4000",
+    baseUrl1:"https://linkages-profiling-api.herokuapp.com"
 }

@@ -3,7 +3,7 @@ import "./Footer.css";
 import {
   FaGithub,
   FaTwitter,
-  FaInstagram,
+  // FaInstagram,
   FaFacebookF,
   FaLinkedinIn,
 } from "react-icons/fa";
