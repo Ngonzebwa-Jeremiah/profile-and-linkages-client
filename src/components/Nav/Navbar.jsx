@@ -61,9 +61,9 @@ const Navbar = () => {
           
               </div>
           </nav>  
-                <div
+                <div 
                 style={{ display: showMe ? "block" : "none" }}
-                className="menu"
+                className="menu "
                 >
                 <span className="menuitem">
                 <Link to="/profile">
@@ -73,9 +73,9 @@ const Navbar = () => {
                     </Link>
                 </span>
                 <span className="menuitem">
-                <Link to="/">
+                <Link to="/signin">
                 <a className='nav-link my-0 text-white' activeclassname='activeLink'>
-                Sign out
+                Sign In
                     </a>
                     </Link>
                 </span>

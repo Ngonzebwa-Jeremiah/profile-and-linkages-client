@@ -14,28 +14,28 @@ function profile() {
       
         <div style={{width:'70vw', margin:'1% auto'}}>
             <ProfileHeader/>
-            <Heading title="Bio"/>
+            <h5 title="Bio" className = "d-flex mb-2" style = {{color: "#096691 "}}>Bio</h5>
             <ParagraphBasic text="John Magele is a Web developer professional and Techmunch, an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers.
             John Magele is a Web developer professional and Techmunch, an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers"/>
             <Border/>
 
-            <Heading title="Technical Skills"/>
+            <h5 className = "d-flex mb-2 "style = {{color: "#096691 "}}>Technical Skills</h5>
             <Tags text="CSS"/>
             <Border/>
 
-            <Heading title="Other Skills"/>
+            <h5  className = "d-flex mb-2" style = {{color: "#096691 "}}>Other Skills</h5>
             <Tags text="Express JS"/>
             <Border/>
 
-            <Heading title="Certifications"/>
+            <h5 className = "d-flex mb-2"  style = {{color: "#096691 "}}>Certifications</h5>
             <Tags text="Product managment"/>
             <Border/>
             
-            <Heading title="Projects"/>
-            <ProfileCard/>
+            <h5 className = "d-flex mb-2" style = {{color: "#096691 "}}>Projects</h5> 
+           <ProfileCard/>
             <Border/>
 
-            <Heading title="Resume"/>
+            <h5 className = "d-flex mb-2" style = {{color: "#096691 "}}>Resume</h5>
             <ButtonOutlined text="View Resume" url = "#" />
 
         </div>
