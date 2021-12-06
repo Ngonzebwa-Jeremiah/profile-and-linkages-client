@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Footer from "../../components/Footer/Footer";
 import "./SignIn.css"
 
 export default function SignIn() {
@@ -23,11 +22,10 @@ export default function SignIn() {
 
   <input type="submit" value="Submit" style={{ backgroundColor: '#04739B' }} className="btn  rounded-0 border-0 w-100 text-light my-2"/>
 </form>
-<span>I do not have an account  <Link to='/signup'><span className='text-info'>Sign Up</span></Link></span>
+<span>I do not have an account  <Link to='/signup'><span >Sign Up</span></Link></span>
       </div>
     
     </div>
-    <Footer/>
     </>
   );
 }

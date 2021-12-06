@@ -4,12 +4,12 @@ import { Routes, Route} from "react-router-dom";
 import Home from "./pages/Home/Home";
 import SignIn from "./pages/SignIn/SignIn";
 import CreateProfile from "./pages/CreateProfile/CreateProfile"
-import ViewProfile from "./pages/ViewProfile/ViewProfile";
 
 import './App.css';
 import SignUp from "./pages/SignUp/SignUp";
 import Navbar from "./components/Nav/Navbar";
 import Profile from "./pages/Profile/Profile";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -21,8 +21,8 @@ function App() {
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/createprofile" element={<CreateProfile/>} />
         <Route path="/profile" element={<Profile/>} />
-        <Route path="/viewprofile/:id" element={<ViewProfile/>} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
