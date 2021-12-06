@@ -68,17 +68,11 @@ function Footer() {
       </div>
       <div className="copysection">
         <Link to="/" className="logo">
-          <a>
-            <img
-              loader={({ src, width, quality }) => {
-                return `${src}`;
-              }}
-              src="/Images/outbox.png"
+            <img src="/Images/outbox.png"
               alt="logo"
               width={100}
               height={45}
             />
-          </a>
         </Link>
         <div>
           <p style={{ fontSize: "1rem" }}>
@@ -86,18 +80,18 @@ function Footer() {
           </p>
         </div>
         <div className="social">
-          <a href="https://facebook.com/OutboxEdu">
+          <Link to="https://facebook.com/OutboxEdu">
             <FaFacebookF />
-          </a>
-          <a href="https://linkedin.com/company/outboxuganda/">
+          </Link>
+          <Link to="https://linkedin.com/company/outboxuganda/">
             <FaLinkedinIn />
-          </a>
-          <a href="https://twitter.com/EduOutbox">
+          </Link>
+          <Link to="https://twitter.com/EduOutbox">
             <FaTwitter />
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="#">
             <FaGithub />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

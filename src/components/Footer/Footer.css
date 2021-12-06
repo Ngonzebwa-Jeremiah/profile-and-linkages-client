@@ -3,7 +3,7 @@
   padding: 5px 0 5px 0;
   background-color: #096691;
   color: #ffffff;
-  width: 100%;
+  max-width: 100%;
 }
 .footer li a {
   display: flex;

@@ -67,16 +67,16 @@ const Navbar = () => {
                 >
                 <span className="menuitem">
                 <Link to="/profile">
-                <a className='nav-link my-0 text-white' activeclassname='activeLink'>
+                <span className='nav-link my-0 text-white' activeclassname='activeLink'>
                     View Profile
-                    </a>
+                    </span>
                     </Link>
                 </span>
                 <span className="menuitem">
                 <Link to="/signin">
-                <a className='nav-link my-0 text-white' activeclassname='activeLink'>
+                <span className='nav-link my-0 text-white' activeclassname='activeLink'>
                 Sign In
-                    </a>
+                    </span>
                     </Link>
                 </span>
             </div>
