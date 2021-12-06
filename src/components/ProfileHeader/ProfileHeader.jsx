@@ -10,15 +10,17 @@ export default function ProfleHeader({info}) {
             {/* { 
             typeof info[0] != "undefined"? */}
           <>
-            <div style={{borderBottom:"2px solid red"}} className="d-flex justify-content-end p-3" >
+            <div style={{borderBottom:"2px solid red"}} className="d-flex flex-column p-3 flex-row-reverse " >
+
+            <img src="/Images/John.webp" alt="img" style = {{width : "50%"}} className="img"/>
             <div className="details"> 
-                <span className="p">{info[0].user.firstName} {info[0].user.lastName}</span> 
-                <span className="p">{info[0].title}</span>  
-                <span className="p">{info[0].phoneNumber}</span>
-                <span className="p">{info[0].user.email}</span> 
+                <span className="p">Awesome One</span>
+                <span className="p">awesome@gmail.com</span>  
+                <span className="p">0783439939</span> 
+                <span className="p">Backend Developer</span> 
             </div>  
                 
-                <img src="/Images/John.webp" alt="img" width="150" height="150" className="img"/>
+               
             </div>
             </>
             {/* :"Loading" */}

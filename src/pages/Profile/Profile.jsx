@@ -1,7 +1,7 @@
 import React from 'react'
 import Border from '../../components/Border/Border'
 import Heading from '../../components/Heading/Heading'
-// import ProfileHeader from '../../components/ProfileHeader/ProfileHeader'
+import ProfileHeader from '../../components/ProfileHeader/ProfileHeader'
 import {ParagraphBasic} from '../../components/Paragraph/Paragraph'
 import Tags from '../../components/Tags/Tag'
 import ProfileCard from '../../components/ProjectCard/ProjectCard'
@@ -12,8 +12,8 @@ function profile() {
     return (
         <>
       
-        <div style={{maxWidth:'100', margin:'auto auto'}}>
-            {/* <ProfileHeader/> */}
+        <div style={{width:'70vw', margin:'1% auto'}}>
+            <ProfileHeader/>
             <Heading title="Bio"/>
             <ParagraphBasic text="John Magele is a Web developer professional and Techmunch, an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers.
             John Magele is a Web developer professional and Techmunch, an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers"/>
@@ -36,7 +36,7 @@ function profile() {
             <Border/>
 
             <Heading title="Resume"/>
-            <ButtonOutlined text="View Resume"/>
+            <ButtonOutlined text="View Resume" url = "#" />
 
         </div>
         </>
