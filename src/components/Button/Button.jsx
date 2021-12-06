@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import "./Button.css";
 
 
@@ -19,14 +19,14 @@ export function ButtonFilled(props) {
 export function ButtonOutlined(props) {
     return (
         <div className="buttonOutlined"onClick={props.onClick}>
-             <Link to={props.url} target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}>
+             <a href={props.url} target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}>
            
                 <button>
           
                 {props.text}
                 </button>
             
-            </Link>
+            </a>
         </div>
     )
 }

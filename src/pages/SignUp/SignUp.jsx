@@ -27,7 +27,7 @@ console.log(data.firstName, data.lastName, data.email);
 // console.log(`heyy`);
 
 setLoading(true)
-fetch(`${Urls.testUrl}/api/v1/auth/signup`, {
+fetch(`${Urls.baseUrl}/api/v1/auth/signup`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
@@ -42,13 +42,13 @@ fetch(`${Urls.testUrl}/api/v1/auth/signup`, {
 })
   .then((res) => res.json())
   .then((res) => {
-    console.log(res);
+    console.log(res.accessToken);
     if (res.user) {
       
       setError(res.message);
       setLoading(false);
       navigate("/createprofile")
-      localStorage.setItem('user',JSON.stringify(res.user))
+      localStorage.setItem('user',JSON.stringify(res.accessToken))
       return;
     }
     // setUser(res.user);

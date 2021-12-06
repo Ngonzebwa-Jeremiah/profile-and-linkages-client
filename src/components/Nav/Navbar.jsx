@@ -27,7 +27,7 @@ const Navbar = () => {
     function toggle(){
       setShowMe(!showMe);
     }
-
+console.log(button);
     return (
         <div>
           <nav className="navbar">
