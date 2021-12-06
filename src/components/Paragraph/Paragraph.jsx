@@ -1,9 +1,9 @@
 import React from "react";
-import ParagraphCss from "./Paragraph.module.css";
+import  "./Paragraph.css";
 
 export function Paragraph({ text }) {
   return (
-    <div className={ParagraphCss.paragraph}>
+    <div className="paragraph">
       <p>{text}</p>
     </div>
   );
@@ -11,7 +11,7 @@ export function Paragraph({ text }) {
 
 export function ParagraphBasic({ text }) {
   return (
-    <div className="w-75 mx-4 text-secondary">
+    <div className="w-90 mx-4 text-secondary">
       <p>{text}</p>
     </div>
   );

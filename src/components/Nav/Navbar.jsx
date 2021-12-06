@@ -22,7 +22,12 @@ const Navbar = () => {
     }, []);
 
     window.addEventListener('resize', showButton);
-     console.log(button);
+    
+    const [showMe, setShowMe] = useState(false);
+    function toggle(){
+      setShowMe(!showMe);
+    }
+
     return (
         <div>
           <nav className="navbar">
@@ -40,11 +45,11 @@ const Navbar = () => {
                           </Link>
                       </li>
                       <li className ='nav-item'>
-                          <Link to ='/' className ='nav-links' onClick={closeMobileMenu}>
+                          <Link to ='/createprofile' className ='nav-links' onClick={closeMobileMenu}>
                              Create Profile
                           </Link>
                       </li>
-                       <li className ='nav-item'>
+                       <li className ='nav-item dropdown' onClick={toggle}>
                           <span to ='/' className ='nav-links ' onClick={closeMobileMenu}>
                                John
                               <img src="/Images/John.webp" alt="avatar" width={40} height={40}/>
@@ -56,6 +61,25 @@ const Navbar = () => {
           
               </div>
           </nav>  
+                <div 
+                style={{ display: showMe ? "block" : "none" }}
+                className="menu "
+                >
+                <span className="menuitem">
+                <Link to="/profile">
+                <span className='nav-link my-0 text-white' activeclassname='activeLink'>
+                    View Profile
+                    </span>
+                    </Link>
+                </span>
+                <span className="menuitem">
+                <Link to="/signin">
+                <span className='nav-link my-0 text-white' activeclassname='activeLink'>
+                Sign In
+                    </span>
+                    </Link>
+                </span>
+            </div>
         </div>
     );
 }

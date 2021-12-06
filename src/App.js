@@ -9,8 +9,11 @@ import Error from "./pages/404/Error";
 import Nav from "./components/Nav/Navbar";
 
 
-import ViewProfile from "./pages/ViewProfile/ViewProfile";
+import ViewProfile from "./pages/Profile/Profile";
+import CreateProfile from "./pages/CreateProfile/CreateProfile"
 
+import Profile from "./pages/Profile/Profile";
+import Footer from "./components/Footer/Footer";
 import './App.css';
 
 function App() {
@@ -24,7 +27,10 @@ function App() {
 
         <Route path="/viewprofile/:id" element={<ViewProfile/>} />
         <Route path="*" element={ <Error/>} />
+        <Route path="/createprofile" element={<CreateProfile/>} />
+        <Route path="/profile" element={<Profile/>} />
       </Routes>
+      <Footer/>
     </div>
   );
 }

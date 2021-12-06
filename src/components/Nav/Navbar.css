@@ -63,7 +63,7 @@
 }
 
 .nav-links:hover {
-  border-bottom: 4px solid #096691;
+  border-bottom: 1px solid #096691;
   transition: all 0.2s ease-out;
 }
 
@@ -77,6 +77,21 @@
 
 .menu-icon {
   display: none;
+}
+.menu {
+  line-height: 20px;
+  height: fit-content;
+  background: #096692;
+  color: #fff;
+  padding: 10px;
+  position: absolute;
+  right: 20rem;
+  width: max-content;
+  opacity: 0.9;
+}
+.menuitem:hover {
+  color: #d9e0e8;
+  /* text-decoration: underline; */
 }
 
 

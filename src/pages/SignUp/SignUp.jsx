@@ -47,7 +47,7 @@ fetch(`${Urls.testUrl}/api/v1/auth/signup`, {
       
       setError(res.message);
       setLoading(false);
-      navigate("/profileform")
+      navigate("/createprofile")
       localStorage.setItem('user',JSON.stringify(res.user))
       return;
     }
@@ -69,7 +69,7 @@ fetch(`${Urls.testUrl}/api/v1/auth/signup`, {
           Sign up
         </span>
         <form onSubmit={submit}>
-          <div className="mb-2">
+          <div className="mb-2 d-flex flex-column">
             <label className="form-label text-start  w-100">First Name</label>
             <input
               type="text"
@@ -79,7 +79,7 @@ fetch(`${Urls.testUrl}/api/v1/auth/signup`, {
               required
             />
           </div>
-          <div className="mb-2">
+          <div className=" d-flex flex-column mb-2">
             <label className="form-label text-start  w-100">Last Name</label>
             <input
               type="text"
@@ -89,7 +89,7 @@ fetch(`${Urls.testUrl}/api/v1/auth/signup`, {
               required
             />
           </div>
-          <div className="mb-2">
+          <div className=" d-flex flex-column mb-2">
             <label className="form-label text-start  w-100">Email address</label>
             <input
               type="email"
@@ -99,7 +99,7 @@ fetch(`${Urls.testUrl}/api/v1/auth/signup`, {
               required
             />
           </div>
-          <div className="mb-2">
+          <div className="d-flex flex-column mb-2">
             <label className="form-label text-start  w-100">Password</label>
             <input
               type="password"

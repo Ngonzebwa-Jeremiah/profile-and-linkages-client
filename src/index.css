@@ -1,5 +1,7 @@
+*{
+  margin: 0;
+}
 body {
   margin: 0;
-margin: auto auto;
-max-width: 1500px;
+width: 100%;
 }
