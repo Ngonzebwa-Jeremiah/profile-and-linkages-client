@@ -1,12 +1,11 @@
 import React from 'react'
 
-
-function SignIn() {
+function Error() {
     return (
         <div>
-            <h1>SignIN</h1>
+            <h1>404</h1>`
         </div>
     )
 }
 
-export default SignIn
+export default Error

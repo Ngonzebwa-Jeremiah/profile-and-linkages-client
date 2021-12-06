@@ -22,7 +22,7 @@ const Navbar = () => {
     }, []);
 
     window.addEventListener('resize', showButton);
-     
+     console.log(button);
     return (
         <div>
           <nav className="navbar">
