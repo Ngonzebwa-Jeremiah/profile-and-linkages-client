@@ -1,13 +1,11 @@
 import React from 'react'
 import Heading from '../../components/Heading/Heading'
-import Navbar from '../../components/Nav/Navbar'
 import UploadProject from "../../components/UI/UpLoadImage/UploadProject"
 import {UpLoadProfileImage} from "../../components/UI/UpLoadImage/UpLoadImage"
 
 const CreateProfile = () => {
     return (
         <>
-           <Navbar/> 
            <div className="d-flex justify-content-center flex-column  m-3">
             <Heading title="Individual profile form"  className="h5 text-secondary mx-5 " />
             <h5 className="h5 text-secondary mx-5 ">Profile Image</h5>

@@ -1,6 +1,8 @@
 .footerblue {
   background-color: #096691;
   overflow: hidden;
+  display: flex;
+
 }
 
 .footerlink {

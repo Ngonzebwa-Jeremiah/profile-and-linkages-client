@@ -1,12 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Signup.css'
-import Navbar from '../../components/Nav/Navbar'
 
 const SignUp = () => {
     return (
         <>
-       <Navbar/>
        <div className="container-1">
       <div className=" d-flex justify-content-center align-items-center flex-column shadow-lg p-3 mb-5 bg-body rounded p-4">
         <img src="/Images/outboxedu logo.png" alt="logo" height="50" width="50" />
