@@ -22,16 +22,21 @@ function App() {
     <div className="App">
       <Nav/>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<SignUp/>} />
+        <Route path="/Home" element={<Home/>} />
         <Route path="/signin" element={<SignIn/>} />
-        <Route path="/signup" element={<SignUp/>} />
 
         <Route path="/viewprofile/:id" element={<ViewProfile/>} />
-        <Route path="*" element={ <Error/>} />
         <Route path="/createprofile" element={<CreateProfile/>} />
         <Route path="/profile" element={<Profile/>} />
+<<<<<<< HEAD
+        <Route path="/editprofile/:id" element={<EditProfile/>} />
+        <Route path="*" element={<Error/>} />
+
+=======
         <Route path="/apply" element={<JobApply/>} />
         <Route path="/editprofile" element={<EditProfile/>} />
+>>>>>>> 8b3bd35827c5e26ae11041187e034a9e3ad5b17d
       </Routes>
       <Footer/>
     </div>

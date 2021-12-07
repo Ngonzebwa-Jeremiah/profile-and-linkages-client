@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import {  useParams   } from 'react-router-dom'
+
 import axios from "axios";
 import { Link  } from 'react-router-dom'
 import { Urls } from '../../utils/links' 
@@ -6,20 +8,24 @@ import { Urls } from '../../utils/links'
 import Heading from '../../components/Heading/Heading'
 // import {UpLoadProfileImage} from "../../components/UI/UpLoadImage/UpLoadImage"
 
-const CreateProfile = () => {
+const EditProfile = () => {
+  const { id } = useParams();
+  const [message, setMessage] = useState("");
+  const [ loading, setLoading] = useState(false);
 
   const [info, setInfo] = useState("");
-  // const [userData, setUserData] = useState("");
+  const [userData, setUserData] = useState("");
 
   // const navigate = useNavigate();
-  const token =  JSON.parse(localStorage.getItem("user"))  
-  // console.log(token)
+  // const token =  JSON.parse(localStorage.getItem("user"))  
+  // console.log(userData[0].userName)
   
-
+  const userName = userData? userData[0]?.userName :""
+  console.log(userName)
   const [data, setData] = useState({
     // firstName:"",
     // lastName:"",
-    userName:"",
+    userName: "",
     email:"",
     title:"",
     jobStatus:"",
@@ -31,6 +37,7 @@ const CreateProfile = () => {
     otherSkills1:"",
     otherSkills2:"",
     otherSkills3:"",
+
     projectTitle1:"",
     projectDescription1:"",
     projectLink1:"",
@@ -42,40 +49,63 @@ const CreateProfile = () => {
     projectLink3:"",
     resumeURL:"",
     accountStatus:""
-});
-// console.log( response.token);
+  });
+  console.log( data);
+  // console.log(typeof data.userName);
 
 function handleChange(e){
   setData({...data, [e.target.name]: e.target.value});
 }
 
-  const config = {
-    headers: {
-      Authorization:token,
-    },
-  };
+  // const config = {
+  //   headers: {
+  //     Authorization:token,
+  //   },
+  // };
 
   const handleSubmit = (event) => {
+
     event.preventDefault()
-// console.log(data);
+console.log(data);
+setLoading(true)
+
 axios
-    .post(`${Urls.baseUrl}/api/v1/userProfile`, data,config)
+    .put(`${Urls.baseUrl}/api/v1/userProfile/${id}/edit`, data)
 
     .then((res) => {
-      console.log(res);
-      setInfo(res.data);
-      // if (res.data) {
+      if (res.data) {
+      setLoading(false);
+        setInfo(res.data);
         // navigate("/profile")
-      // return;
-      // }
+      return;
+      }
+    setLoading(false);
     })
       .catch((err) => {
         console.log(err);
-        // setError(err.msg)
+        setMessage(err.msg)
       });
   }
+
+  useEffect(() => {
+    axios
+    .get(`${Urls.baseUrl}/api/v1/userProfile/${id}` )
+    .then((res) => {
+      // setInfo(res.data);
+      if (res.data) {
+        setUserData(res.data)
+    // console.log(res.data);
+      return;
+      }
+    })
+      .catch((err) => {
+        console.log(err);
+        setMessage(err.msg)
+      });
+  }, [id]);
     return (
         <>
+
            <div className="d-flex justify-content-center align-items-center flex-column  m-3 ">
             <Heading title="Individual profile form"  />
             <h5 className="h5 text-secondary mx-5 ">Profile Image</h5>
@@ -104,17 +134,19 @@ axios
               required
             />
           </div> */}
+
             <label className="form-label  w-100">Username</label>
             <input
               type="text"
               name="userName"
               onChange={handleChange}
               className="form-control"
+              defaultValue={ userData[0]?.userName }
               required
             />
           <label className="form-label w-100">Title</label>
           <select name="title" onChange={handleChange} className="form-select form-select-sm " aria-label=".form-select-sm example" required>
-  <option defaultValue>None</option>
+  <option defaultValue>{userData? userData[0]?.title:"None"}</option>
   <option value="Backend Developer">Backend Developer</option>
   <option value="Full Stack Developer">Full Stack Developer</option>
   <option value="Dev Ops">Dev Ops</option>
@@ -122,7 +154,7 @@ axios
 
 <label className="form-label w-100">Status</label>
           <select name="jobStatus" onChange={handleChange} className="form-select form-select-sm " aria-label=".form-select-sm example" required>
-  <option defaultValue>None</option>
+  <option defaultValue>{userData? userData[0]?.jobStatus:"None"}</option>
   <option value="Volunteer">Volunteer</option>
   <option value="Part time Employed">Part time Employed</option>
   <option value="Permanent Employed">Permanent Employed</option>
@@ -134,6 +166,7 @@ axios
               name="email"
               onChange={handleChange}
               className="form-control"
+              defaultValue={ userData[0]?.email}
               required
             />
 
@@ -143,6 +176,7 @@ axios
               name="phoneNumber"
               onChange={handleChange}
               className="form-control"
+              defaultValue={ userData[0]?.phoneNumber }
               required
             />
 
@@ -151,6 +185,7 @@ axios
           <textarea
           name="bio"
           onChange={handleChange}
+          defaultValue={ userData[0]?.bio}
            className="form-control" 
           placeholder="About you in 500 words"
            id="floatingTextarea2" 
@@ -168,6 +203,7 @@ axios
           className="form-select form-select-sm " 
           aria-label=".form-select-sm example" 
           required>
+  {/* <option defaultValue>{userData? userData[0]?.technicalSkills1:"None"}</option> */}
   <option defaultValue>None</option>
   <option value="CSS">CSS</option>
   <option value="React">React</option>
@@ -180,6 +216,7 @@ axios
           name="technicalSkills2"
           onChange={handleChange}
           className="form-select form-select-sm " aria-label=".form-select-sm example" required>
+   {/* <option defaultValue>{userData? userData[0]?.technicalSkills2:"None"}</option> */}
    <option defaultValue>None</option>
   <option value="CSS">CSS</option>
   <option value="React">React</option>
@@ -192,6 +229,7 @@ axios
           name="technicalSkills3"
           onChange={handleChange}
           className="form-select form-select-sm " aria-label=".form-select-sm example" required>
+   {/* <option defaultValue>{userData? userData[0]?.technicalSkills3:"None"}</option> */}
    <option defaultValue>None</option>
   <option value="CSS">CSS</option>
   <option value="React">React</option>
@@ -210,7 +248,8 @@ axios
           name="otherSkills1"
           onChange={handleChange}
           className="form-select form-select-sm " aria-label=".form-select-sm example" required>
-          <option defaultValue>None</option>
+          {/* <option defaultValue>{userData? userData[0]?.otherSkills1:"None"}</option> */}
+   <option defaultValue>None</option>
   <option value="Express">Express</option>
   <option value="SQL">SQL</option>
   <option value="Mongoose">Mongoose</option>
@@ -222,7 +261,8 @@ axios
           name="otherSkills2"
           onChange={handleChange}
           className="form-select form-select-sm " aria-label=".form-select-sm example" required>
-          <option defaultValue>None</option>
+          {/* <option defaultValue>{userData? userData[0]?.otherSkills2:"None"}</option> */}
+   <option defaultValue>None</option>
   <option value="Express">Express</option>
   <option value="SQL">SQL</option>
   <option value="Mongoose">Mongoose</option>
@@ -234,7 +274,8 @@ axios
           name="otherSkills3"
           onChange={handleChange}
           className="form-select form-select-sm " aria-label=".form-select-sm example" required>
-         <option defaultValue>None</option>
+         {/* <option defaultValue>{userData? userData[0]?.otherSkills3:"None"}</option> */}
+   <option defaultValue>None</option>
   <option value="Express">Express</option>
   <option value="SQL">SQL</option>
   <option value="Mongoose">Mongoose</option>
@@ -248,6 +289,7 @@ axios
             <input
             name="projectTitle1"
             onChange={handleChange}
+            defaultValue={ userData[0]?.projectTitle1}
               type="text"
               className="form-control"
             />
@@ -255,6 +297,7 @@ axios
             <textarea
              name="projectDescription1"
              onChange={handleChange}
+            defaultValue={ userData[0]?.projectDescription1}
               type="text"
               className="form-control"
             />
@@ -262,6 +305,7 @@ axios
             <input
              name="projectLink1"
              onChange={handleChange}
+            defaultValue={ userData[0]?.projectLink1}
               type="text"
               className="form-control"
             />
@@ -273,6 +317,7 @@ axios
             <input
              name="projectTitle2"
              onChange={handleChange}
+            // defaultValue={userData? userData[0]?.projectTitle2 :""}
               type="text"
               className="form-control"
             />
@@ -280,6 +325,7 @@ axios
             <textarea
             name="projectDescription2"
             onChange={handleChange}
+            // defaultValue={userData? userData[0]?.projectDescription2 :""}
               type="text"
               className="form-control"
             />
@@ -287,6 +333,7 @@ axios
             <input
             name="projectLink2"
             onChange={handleChange}
+            defaultValue={userData[0]?.projectLink2}
               type="text"
               className="form-control"
             />
@@ -298,6 +345,7 @@ axios
             <input
             name="projectTitle3"
             onChange={handleChange}
+            defaultValue={ userData[0]?.projectTitle3 }
               type="text"
               className="form-control"
             />
@@ -305,6 +353,7 @@ axios
             <textarea
             name="projectDescription3"
             onChange={handleChange}
+            defaultValue={ userData[0]?.projectDescription3}
               type="text"
               className="form-control"
             />
@@ -312,6 +361,7 @@ axios
             <input
             name="projectLink3"
             onChange={handleChange}
+            defaultValue={userData[0]?.projectLink3}
               type="text"
               className="form-control"
             />
@@ -322,6 +372,7 @@ axios
             <input
              name="resumeURL"
              onChange={handleChange}
+            defaultValue={userData[0]?.resumeURL}
               type="text"
               className="form-control"
               placeholder="Paste a link of your Resume pdf"
@@ -330,7 +381,8 @@ axios
 {/* Button */}
           <input
             type="submit"
-            value="Submit Form"
+            value={loading ? "Submiting..." : "Submit"}
+
             style={{ backgroundColor: "#04739B" }}
             className="btn  rounded-0 border-0 w-100 text-light my-2"
           />
@@ -340,9 +392,9 @@ axios
         {info &&
         <>
 <span className="h4">{info.message}</span>
-        
+        <span>{message}</span>
         <button className="btn border">
-        <Link to={`/viewprofile/${info.userProfile._id}`} >
+        <Link to={`/viewprofile/${id}`} >
 view profile
         </Link>
         </button>
@@ -355,4 +407,4 @@ view profile
 
 }
 
-export default CreateProfile
+export default EditProfile

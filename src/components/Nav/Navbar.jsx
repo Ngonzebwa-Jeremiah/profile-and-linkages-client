@@ -1,14 +1,19 @@
 import React, {useState,useEffect} from 'react'
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import { ButtonFilled} from '../Button/Button';
+
+// import jwt from 'jwt-decode'
 import './Navbar.css'
 
 const Navbar = () => {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true)
+    // const [user, setUser] = useState(true)
+
 
     const handleClick =()=>setClick(!click);
     const closeMobileMenu =()=>setClick(false)
+    const navigate = useNavigate();
 
     const showButton =() =>{
          if(window.innerWidth <= 960){
@@ -27,6 +32,25 @@ const Navbar = () => {
     function toggle(){
       setShowMe(!showMe);
     }
+
+
+// if(localStorage.getItem('user') === null){
+//     console.log('null');
+// }else{
+//     const token =  localStorage.getItem('user')
+//     setUser(jwt(token));
+// }
+const user = null
+// console.log( user);
+
+
+
+function signOut(){
+    localStorage.removeItem('user')
+    navigate("/")
+}
+
+
 console.log(button);
     return (
         <div>
@@ -44,20 +68,20 @@ console.log(button);
                               Jobs
                           </Link>
                       </li>
-                      <li className ='nav-item'>
+                      {/* <li className ='nav-item'>
                           <Link to ='/createprofile' className ='nav-links' onClick={closeMobileMenu}>
                              Create Profile
                           </Link>
-                      </li>
+                      </li> */}
                        <li className ='nav-item dropdown' onClick={toggle}>
-                          <span to ='/' className ='nav-links ' onClick={closeMobileMenu}>
-                               John
-                              <img src="/Images/John.webp" alt="avatar" width={40} height={40}/>
-                          </span>
+                          {/* <span to ='/' className ='nav-links ' onClick={closeMobileMenu}>
+                              {user && user.firstName }
+                              <img src="/Images/John.webp" alt="avatar" className ='mx-2' width={40} height={40}/>
+                          </span> */}
                       </li>
                     
                   </ul>
-                  <ButtonFilled text="Sign Up" url = "#" onClick={()=>console.log("hihi")}/>
+                  <ButtonFilled text={ typeof user === "undefined" ?"Sign Up": "Sign out"} url = "#" onClick={signOut}/>
           
               </div>
           </nav>  
