@@ -29,14 +29,11 @@ function App() {
         <Route path="/viewprofile/:id" element={<ViewProfile/>} />
         <Route path="/createprofile" element={<CreateProfile/>} />
         <Route path="/profile" element={<Profile/>} />
-<<<<<<< HEAD
         <Route path="/editprofile/:id" element={<EditProfile/>} />
         <Route path="*" element={<Error/>} />
 
-=======
         <Route path="/apply" element={<JobApply/>} />
         <Route path="/editprofile" element={<EditProfile/>} />
->>>>>>> 8b3bd35827c5e26ae11041187e034a9e3ad5b17d
       </Routes>
       <Footer/>
     </div>
