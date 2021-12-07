@@ -140,28 +140,27 @@
 
 @media screen and (max-width: 480px) {
   .footer {
-    width: 125vh;
+    width: 100vh;
     padding: 0;
   }
   .footer h2 {
-    padding: 1.5rem;
+    padding: 1.3rem;
     margin: 0;
     text-align: center;
     color: #ffffff;
-    font-size: 2.8rem;
+    font-size: 1.7rem;
     font-weight: 700;
   }
   .button1 {
-    padding: 20px 18px;
-    font-size: 1.9rem;
+    padding: 10px 18px;
+    font-size: 1rem;
   }
   .button2 {
-    font-size: 2rem;
-    padding: 20px 18px;
-    font-size: 1.9rem;
+    padding: 10px 18px;
+    font-size: 1rem;
   }
   .flex1 > button {
-    margin: 20px;
+    margin: 15px;
   }
   .flex1 {
     align-items: center;
@@ -173,11 +172,11 @@
     flex-direction: column;
   }
   .flex2 h4 {
-    font-size: 2.3rem;
+    font-size: 1.2rem;
   }
   .flex2 li a {
-    font-size: 2rem;
-    padding: 0.9rem;
+    font-size: 1rem;
+    padding: 0.1rem;
   }
   .copysection {
     flex-direction: column;

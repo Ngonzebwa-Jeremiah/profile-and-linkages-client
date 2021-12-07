@@ -12,6 +12,7 @@ import EditProfile from "./pages/EditProfile/EditProfile"
 import ViewProfile from "./pages/Profile/Profile";
 import CreateProfile from "./pages/CreateProfile/CreateProfile"
 
+import JobApply from "./pages/JobApply/JobApply"
 import Profile from "./pages/Profile/Profile";
 import Footer from "./components/Footer/Footer";
 import './App.css';
@@ -28,9 +29,14 @@ function App() {
         <Route path="/viewprofile/:id" element={<ViewProfile/>} />
         <Route path="/createprofile" element={<CreateProfile/>} />
         <Route path="/profile" element={<Profile/>} />
+<<<<<<< HEAD
         <Route path="/editprofile/:id" element={<EditProfile/>} />
         <Route path="*" element={<Error/>} />
 
+=======
+        <Route path="/apply" element={<JobApply/>} />
+        <Route path="/editprofile" element={<EditProfile/>} />
+>>>>>>> 8b3bd35827c5e26ae11041187e034a9e3ad5b17d
       </Routes>
       <Footer/>
     </div>
