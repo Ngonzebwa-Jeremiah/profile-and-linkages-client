@@ -8,7 +8,7 @@ import SignUp from "./pages/SignUp/SignUp";
 import Error from "./pages/404/Error";
 import Nav from "./components/Nav/Navbar";
 
-
+import EditProfile from "./pages/EditProfile/EditProfile"
 import ViewProfile from "./pages/Profile/Profile";
 import CreateProfile from "./pages/CreateProfile/CreateProfile"
 
@@ -29,6 +29,7 @@ function App() {
         <Route path="*" element={ <Error/>} />
         <Route path="/createprofile" element={<CreateProfile/>} />
         <Route path="/profile" element={<Profile/>} />
+        <Route path="/editprofile" element={<EditProfile/>} />
       </Routes>
       <Footer/>
     </div>
