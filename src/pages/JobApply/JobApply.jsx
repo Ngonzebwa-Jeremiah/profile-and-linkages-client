@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonFilled, ButtonOutlined } from '../../components/Button/Button'
+import { ButtonFilled} from '../../components/Button/Button'
 import Heading from '../../components/Heading/Heading'
 
 const JobApply = () => {
@@ -24,31 +24,27 @@ const JobApply = () => {
       
                   </div>
       </div>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label"></label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder= "Email address" aria-describedby="emailHelp"/>
+  <div className="mb-3">
+    <label htmlFor="exampleInputEmail1" className="form-label"></label>
+    <input type="email" className="form-control"  placeholder= "Email address" aria-describedby="emailHelp"/>
     
   </div>
-  <div class="mb-3">
-    <input type="password" class="form-control" placeholder= "Password" id="exampleInputPassword1"/>
+  <div className="mb-3">
+    <input type="password" className="form-control" placeholder= "Password" />
   </div>
-   <div class="mb-3">
-   <select required  class="form-select">
-            <option disabled selected >
-              Job title
-            </option>
+   <div className="mb-3">
+   <select required  className="form-select" defaultValue={'DEFAULT'}>
+       <option value="DEFAULT" disabled>Job Title</option>
             <option value="Frontend">Frontend</option>
             <option value="Backend">Backend</option>
             <option value="Fullstack">Fullstack</option>
             <option value="UI/UX">UI/UX</option>
           </select>
    </div>
-  <div class="mb-3">
-    <input type="password" class="form-control" placeholder= "Github Handle" id="exampleInputPassword1"/>
+  <div className="mb-3">
+    <input type="text" className="form-control" placeholder= "Github Handle" />
   </div>
-  <div class="mb-3">
-    <input type="password" class="form-control" placeholder= "Password" id="exampleInputPassword1"/>
-  </div>
+ 
 
   <ButtonFilled text = "Submit"/>
 </form>

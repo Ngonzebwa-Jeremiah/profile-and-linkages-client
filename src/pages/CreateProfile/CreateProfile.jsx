@@ -76,7 +76,7 @@ axios
   }
     return (
         <>
-           <div className="d-flex justify-content-center align-items-center flex-column  m-3 ">
+           <div className="d-flex justify-content-center align-items-center flex-column  m-3 " >
             <Heading title="Individual profile form"  />
             <h5 className="h5 text-secondary mx-5 ">Profile Image</h5>
             {/* <UpLoadProfileImage/> */}
@@ -104,7 +104,7 @@ axios
               required
             />
           </div> */}
-            <label className="form-label  w-100">Username</label>
+            <label className="form-label  w-100" >Username</label>
             <input
               type="text"
               name="userName"
