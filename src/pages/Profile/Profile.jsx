@@ -5,7 +5,7 @@ import ProfileHeader from '../../components/ProfileHeader/ProfileHeader'
 import {ParagraphBasic} from '../../components/Paragraph/Paragraph'
 import Tags from '../../components/Tags/Tag'
 import ProfileCard from '../../components/ProjectCard/ProjectCard'
-import {ButtonOutlined} from '../../components/Button/Button'
+import {ButtonFilled, ButtonOutlinedInternal} from '../../components/Button/Button'
 import {  useParams   } from 'react-router-dom'
 import { Urls } from '../../utils/links' 
 
@@ -75,9 +75,11 @@ function Profile() {
             />
             <Border/>
 
-            <h5 className = "d-flex mb-2" style = {{color: "#096691 "}}>Resume</h5>
-            <ButtonOutlined text="View Resume" url = {data[0].resumeURL}/>
-
+            <h5 className = "d-flex mb-2 " style = {{color: "#096691 "}}>Resume</h5>
+            <div className="d-flex justify-content-center align-items-center ">
+            <ButtonFilled text="View Resume" url = {data[0].resumeURL}/>
+            <ButtonOutlinedInternal text="Edit Profile" url = {`/editprofile/${id}`}/>
+            </div>
         </div>
         :"loading..."}
         </>

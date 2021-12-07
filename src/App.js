@@ -28,7 +28,9 @@ function App() {
         <Route path="/viewprofile/:id" element={<ViewProfile/>} />
         <Route path="/createprofile" element={<CreateProfile/>} />
         <Route path="/profile" element={<Profile/>} />
-        <Route path="/editprofile" element={<EditProfile/>} />
+        <Route path="/editprofile/:id" element={<EditProfile/>} />
+        <Route path="*" element={<Error/>} />
+
       </Routes>
       <Footer/>
     </div>
