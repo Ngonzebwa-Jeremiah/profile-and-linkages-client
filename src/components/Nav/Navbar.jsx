@@ -40,7 +40,7 @@ console.log(button);
                   </div>
                   <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                       <li className ='nav-item'>
-                          <Link to ='/' className ='nav-links' onClick={closeMobileMenu}>
+                          <Link to ='/jobs' className ='nav-links' onClick={closeMobileMenu}>
                               Jobs
                           </Link>
                       </li>

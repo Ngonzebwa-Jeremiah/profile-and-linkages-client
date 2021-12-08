@@ -1,0 +1,165 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+  }
+  .read {
+    color: #0072a1;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  .read:hover {
+    text-decoration: underline;
+  }
+  .search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: #096692;
+    margin: 18px 0 35px 0;
+  }
+  .search input{
+     border: 1px #096692 solid;
+  }
+  .selectFilter {
+    padding: 7.3px 25px;
+    width: 150px;
+    height: 35px;
+    border-radius: 0 3px 3px 0;
+    color: #2980b9;
+    font-size: 16px;
+    border: 0.5px solid #096692;
+  }
+  
+  .search1 {
+    padding: 8px 25px;
+    width: 250px;
+    height: 35px;
+    border-radius: 3px 0 0 3px;
+    color: #2980b9;
+    font-size: 16px;
+    border: 0.5px solid gray;
+  }
+  
+  .selectFilter option {
+    font-size: 16px;
+    padding: 15px 0;
+    text-align: center;
+  }
+  .major {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .card {
+    color: #3f556b;
+    width: 300px;
+    height: 300px;
+    background: #dee6ee;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
+    padding: 4px 10px 5px 10px;
+    border-radius: 3px;
+    margin: 0.8rem;
+    cursor: pointer;
+  }
+  .card:hover {
+    transition: 0.6s ease-in;
+    transform: scale(1.06);
+  }
+  .card p {
+    padding: 0;
+  }
+  .jobTitle {
+    font-size: 1rem;
+    color: #3f556b;
+    padding-top: 15px;
+    font-weight: bold;
+  }
+  .companyDetails {
+    font-size: 15.7px;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #636e72;
+  }
+  
+  .deadline {
+    color: #2980b9;
+    font-size: 14px;
+  }
+  .paragraph {
+    font-size: 13px;
+  }
+  
+  @media screen and (max-width: 770px) {
+    .main {
+      width: 90vh;
+    }
+  }
+  
+  @media screen and (max-width: 650px) {
+    .read {
+      font-size: 28px;
+    }
+    .selectFilter {
+      padding: 9px 25px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .main {
+      width: 70vh;
+      margin-left: 6.7rem;
+    }
+    .major {
+      width: 100%;
+      height: 1400px;
+      overflow: auto;
+    }
+    .card {
+      width: 690px;
+      height: 690px;
+      margin-bottom: 15px;
+      padding: 34px;
+    }
+  
+    .jobTitle {
+      font-size: 2.5rem;
+    }
+    .companyDetails {
+      font-size: 2.5rem;
+    }
+    .deadline {
+      font-size: 2.5rem;
+    }
+    .paragraph {
+      font-size: 2rem;
+    }
+  
+    .selectFilter,
+    .search1 {
+      font-size: 1.5rem;
+      padding: 11px 30px;
+      height: 50px;
+    }
+    .selectFilter option {
+      font-size: 13px;
+    }
+    .read {
+      font-size: 36px;
+    }
+  }
+  
+  @media screen and (max-width: 378px) {
+    .main {
+      width: 90vh;
+    }
+    .read {
+      font-size: 37px;
+    }
+  }
+  
