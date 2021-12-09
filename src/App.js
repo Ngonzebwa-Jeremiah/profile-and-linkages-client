@@ -13,6 +13,8 @@ import ViewProfile from "./pages/Profile/Profile";
 import CreateProfile from "./pages/CreateProfile/CreateProfile"
 import Profile from "./pages/Profile/Profile";
 import Footer from "./components/Footer/Footer";
+import Test from './pages/Law/Test'
+import Jest from './pages/Jest/Jest'
 import './App.css';
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
         <Route path="*" element={ <Error/>} />
         <Route path="/createprofile" element={<CreateProfile/>} />
         <Route path="/profile" element={<Profile/>} />
+        <Route path="/test" element={<Test/>} />
+         <Route path="/jest/:location" element={<Jest/>}/>
       </Routes>
       <Footer/>
     </div>
