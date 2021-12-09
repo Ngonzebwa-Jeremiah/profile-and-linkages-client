@@ -31,7 +31,7 @@ function App() {
         <Route path="/createprofile" element={<CreateProfile/>} />
         <Route path="/profile" element={<Profile/>} />
         <Route path="/test" element={<Test/>} />
-         <Route path="/jest/:location" element={<Jest/>}/>
+         <Route path="/jobs/:id" element={<Jest/>}/>
       </Routes>
       <Footer/>
     </div>

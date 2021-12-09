@@ -1,33 +1,32 @@
-import React,{useState, useEffect} from 'react'
-import db from "../../firebase/firebase";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
-import {useParams} from 'react-router-dom'
+/* eslint-disable */
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { fetchOne } from "../../utils/fetch";
 
 function Jest() {
-    const db = getFirestore();
-    const {location,coName} = useParams();
+  const { id } = useParams();
+  const [data, setData] = useState({});
 
-
-  const [todos, setTodos] = useState([]);
-  
   const fetchdata = async () => {
-    const querySnapshot = await getDocs(collection(db, "jobs"));
-    querySnapshot.forEach((doc) => {
-      setTodos((prev) => {
-        return [...prev, doc.data()];
-      });
-    });
+    const job = await fetchOne("jobs", id);
+    setData((PrevData) => ({ ...PrevData, ...job }));
   };
 
   useEffect(() => {
     fetchdata();
   }, []);
-    return (
-        <div>
-            <h2>{coName}</h2>
-            <h2>{location}</h2>
-        </div>
-    )
+  return (
+    <div>
+      {data && (
+        <>
+          <h1>{data.jobTitle}</h1>
+          <p>{data.jobDescription}</p>
+          <p>{data.location}</p>
+          <p>{data.qualifications}</p>
+        </>
+      )}
+    </div>
+  );
 }
 
 export default Jest;

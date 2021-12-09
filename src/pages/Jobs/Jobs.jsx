@@ -2,14 +2,11 @@
 import React, { useState, useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import { createTheme, ThemeProvider } from "@material-ui/core";
-import { Link, useNavigate } from "react-router-dom";
 import OppCard from "../../components/JobOpportunities/Card";
 import styles from "../../styles/Opportunity.module.css";
-import db from "../../firebase/firebase";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { fetchAll } from "../../utils/fetch";
 
-function Jobs({ data }) {
-  const db = getFirestore();
+function Jobs() {
   const theme = createTheme({
     typography: {
       fontFamily: "Montserrat, sans-serif",
@@ -43,12 +40,8 @@ function Jobs({ data }) {
   const [search, setSearch] = useState("");
 
   const fetchdata = async () => {
-    const querySnapshot = await getDocs(collection(db, "jobs"));
-    querySnapshot.forEach((doc) => {
-      setTodos((prev) => {
-        return [...prev, doc.data()];
-      });
-    });
+    const jobs = await fetchAll("jobs");
+    setTodos(jobs);
   };
 
   useEffect(() => {
@@ -101,6 +94,7 @@ function Jobs({ data }) {
                     location={info.location}
                     deadline={info.deadline}
                     paragraph={info.jobDescription}
+                    id={info.id}
                   />
                 </Grid>
               ))}
