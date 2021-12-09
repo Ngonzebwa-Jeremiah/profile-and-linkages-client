@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchOne } from "../../utils/fetch";
 
-function Jest() {
+function Jobid() {
   const { id } = useParams();
   const [data, setData] = useState({});
 
@@ -21,12 +21,13 @@ function Jest() {
         <>
           <h1>{data.jobTitle}</h1>
           <p>{data.jobDescription}</p>
-          <p>{data.location}</p>
           <p>{data.qualifications}</p>
+          <p>{data.location}</p>
+          <p>{data.deadline}</p>
         </>
       )}
     </div>
   );
 }
 
-export default Jest;
+export default Jobid;

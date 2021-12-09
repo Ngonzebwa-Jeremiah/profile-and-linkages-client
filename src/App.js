@@ -13,9 +13,8 @@ import ViewProfile from "./pages/Profile/Profile";
 import CreateProfile from "./pages/CreateProfile/CreateProfile"
 import Profile from "./pages/Profile/Profile";
 import Footer from "./components/Footer/Footer";
-import Test from './pages/Law/Test'
-import Jest from './pages/Jest/Jest'
 import './App.css';
+import Jobid from "./pages/Jobid/Jobid";
 
 function App() {
   return (
@@ -30,8 +29,7 @@ function App() {
         <Route path="*" element={ <Error/>} />
         <Route path="/createprofile" element={<CreateProfile/>} />
         <Route path="/profile" element={<Profile/>} />
-        <Route path="/test" element={<Test/>} />
-         <Route path="/jobs/:id" element={<Jest/>}/>
+         <Route path="/jobs/:id" element={<Jobid/>}/>
       </Routes>
       <Footer/>
     </div>
