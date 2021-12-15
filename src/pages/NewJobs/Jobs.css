@@ -1,6 +1,30 @@
 .Container{
     height: 100%;
     margin-bottom: 3rem;
+    margin-top: 2rem;
+  
+}
+.search{
+    display: flex;
+    justify-content: space-evenly;
+  border-radius: 4px;
+  border: 2px #00729F solid;
+  width: 30%;
+  margin: auto;
+
+}
+.icon{
+   margin-top: 4px;
+   color:#00729F
+   
+}
+input{
+    border-top:   none;
+    border-right:  2px solid #00729F; 
+    border-bottom: none;
+    border-left:  none; 
+    width: 90%;
+    outline-style: none;
 }
 .jobsContainer{
     display: flex;

@@ -1,11 +1,14 @@
 import React from 'react'
 import "./Jobs.css"
+import { BsSearch } from 'react-icons/bs';
+
 const Jobs = () => {
     return (
         <>
             <div className='Container'>
                 <div className='search'>
               <input type = "text" placeholder = "Company"/>
+                <BsSearch className='icon'/>
               </div>
           
             <div className  = "jobsContainer">
@@ -50,9 +53,7 @@ const Jobs = () => {
                     </h5>
                      <p>eveniet aliquid</p>
                      <p className='jobDescription'>
-                     ipsum debitis quas aliquid. Reprehenderit,
-                    quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos 
-                    sapiente officiis modi at sunt excepturi 
+                     ipsum deofficiis modi at sunt excepturi 
                      </p>
                      <p className='readmo'>Read more </p>
                      <p className='deadline'>Deadline: 2/2/2022</p>
