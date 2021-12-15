@@ -1,6 +1,7 @@
 import { Card, CardContent, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import styles from "../../styles/Opportunity.module.css";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -19,7 +20,7 @@ const useStyles = makeStyles({
   },
 });
 
-function OppCard({ company, location, paragraph, deadline, job }) {
+function OppCard({ company, location, paragraph, deadline, job, id }) {
   const classes = useStyles();
   return (
     <Card className={classes.root} variant="outlined">
@@ -38,7 +39,9 @@ function OppCard({ company, location, paragraph, deadline, job }) {
         <Typography variant="body2" gutterBottom>
           {paragraph}
         </Typography>
+        <Link to={`/jobs/${id}`}>
         <p className={styles.read}>Read more.....</p>
+        </Link>
         <Typography variant="body2" color="secondary">
           {deadline}
         </Typography>

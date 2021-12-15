@@ -14,6 +14,7 @@ import CreateProfile from "./pages/CreateProfile/CreateProfile"
 import Profile from "./pages/Profile/Profile";
 import Footer from "./components/Footer/Footer";
 import './App.css';
+import Jobid from "./pages/Jobid/Jobid";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="*" element={ <Error/>} />
         <Route path="/createprofile" element={<CreateProfile/>} />
         <Route path="/profile" element={<Profile/>} />
+         <Route path="/jobs/:id" element={<Jobid/>}/>
       </Routes>
       <Footer/>
     </div>

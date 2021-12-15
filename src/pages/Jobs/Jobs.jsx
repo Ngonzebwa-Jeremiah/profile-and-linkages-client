@@ -1,15 +1,12 @@
-import React,{useState, useEffect} from 'react'
-import { Grid} from "@material-ui/core";
+/* eslint-disable */
+import React, { useState, useEffect } from "react";
+import { Grid } from "@material-ui/core";
 import { createTheme, ThemeProvider } from "@material-ui/core";
-import { Link, useNavigate  } from 'react-router-dom'
-import OppCard from '../../components/JobOpportunities/Card'
-import styles from '../../styles/Opportunity.module.css'
-import db from '../../firebase/firebase'
-import  { collection, getDocs,getFirestore } from 'firebase/firestore'
+import OppCard from "../../components/JobOpportunities/Card";
+import styles from "../../styles/Opportunity.module.css";
+import { fetchAll } from "../../utils/fetch";
 
-
-function Test({data}) {
-  const db = getFirestore();
+function Jobs() {
   const theme = createTheme({
     typography: {
       fontFamily: "Montserrat, sans-serif",
@@ -39,35 +36,26 @@ function Test({data}) {
     },
   });
 
+  const [todos, setTodos] = useState([]);
+  const [search, setSearch] = useState("");
 
-  const [todos,setTodos] = useState([])
-const [search, setSearch] = useState("");
+  const fetchdata = async () => {
+    const jobs = await fetchAll("jobs");
+    setTodos(jobs);
+  };
 
+  useEffect(() => {
+    fetchdata();
+  }, []);
 
-  const fetchdata = async(e)=>{
-      e.preventDefault()
-    const querySnapshot = await getDocs(collection(db, "jobs"));
-    querySnapshot.forEach((doc) => {
-        setTodos((prev)=>{
-                return[...prev,doc.data()]
-        })
-    });
-  }
-
-
-
-    return (
-        <ThemeProvider theme={theme}>
-             <div>
-        <title>
-          <title>EDU LINKAGES</title>
-          <meta name="description" content="Become a software developer" />
-        </title>
+  return (
+    <ThemeProvider theme={theme}>
       <div>
-        <button onClick={fetchdata}>View Jobs</button>
-      </div>
-    
-      <Grid container spacing={0} style={{ display: "flex", flexDirection: "column" }}>
+        <Grid
+          container
+          spacing={0}
+          style={{ display: "flex", flexDirection: "column" }}
+        >
           <div container spacing={1} className={styles.search}>
             <div item xs={6} md={4}>
               <input
@@ -79,42 +67,42 @@ const [search, setSearch] = useState("");
                 }}
               />
             </div>
-
           </div>
-          <Grid container spacing={3} alignItems="stretch" justifyContent="space-between">
+          <Grid
+            container
+            spacing={3}
+            alignItems="stretch"
+            justifyContent="space-between"
+          >
             {todos
-            .filter((info) => {
+              .filter((info) => {
                 if (search === "") {
                   return info;
                 } else if (
-                  info.coName.toLowerCase().includes(search.toString().toLocaleLowerCase())
+                  info.coName
+                    .toLowerCase()
+                    .includes(search.toString().toLocaleLowerCase())
                 ) {
                   return info;
                 }
               })
-            .map((info) => (
-            
-                  <Grid item xs={12} sm={6} md={4} key={info.id}>
-                   <OppCard
-                  job= {info.jobTitle}
-                  company={info.coName}
-                      location={info.location}
-                      deadline={info.deadline}
-                      paragraph={info.jobDescription}
-                   />
-
-
-                  </Grid>
-            
+              .map((info) => (
+                <Grid item xs={12} sm={6} md={4} key={info.id}>
+                  <OppCard
+                    job={info.jobTitle}
+                    company={info.coName}
+                    location={info.location}
+                    deadline={info.deadline}
+                    paragraph={info.jobDescription}
+                    id={info.id}
+                  />
+                </Grid>
               ))}
-                
-             
           </Grid>
         </Grid>
       </div>
-        </ThemeProvider>
-    )
-
+    </ThemeProvider>
+  );
 }
 
-export default Test
+export default Jobs;
