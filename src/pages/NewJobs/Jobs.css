@@ -1,0 +1,38 @@
+.Container{
+    height: 100%;
+    margin-bottom: 3rem;
+}
+.jobsContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 6rem;
+    flex-wrap: wrap;
+}
+.jobCard{
+    background-color: #DEE6EE;
+    width:23rem;
+    padding: 1.2rem;
+    margin: 1rem;
+    box-shadow: 2px 2px 0px 0px #c4c4c4;
+    /* height: 30rem; */
+}
+.jobTitle{
+    color: #00729F;
+    
+}
+.jobArea{
+    color: #3F556B;
+}
+p{
+    color: #3F556B;
+}
+.jobDescription{
+    color: #3F556B;
+}
+.readmo{
+    color: #00729F;
+}
+.deadline{
+    color: #2980B9;
+}
