@@ -64,20 +64,39 @@ console.log(button);
                   </div>
                   <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                       <li className ='nav-item'>
-                          <Link to ='/' className ='nav-links' onClick={closeMobileMenu}>
+                          <Link to ='/jobs' className ='nav-links' onClick={closeMobileMenu}>
                               Jobs
                           </Link>
                       </li>
-                      {/* <li className ='nav-item'>
+                       <li className ='nav-item'>
                           <Link to ='/createprofile' className ='nav-links' onClick={closeMobileMenu}>
                              Create Profile
                           </Link>
-                      </li> */}
+
+                      </li>
+                      <li className ='nav-item none' >
+                          <Link to ='/viewprofile/:id' className ='nav-links' onClick={closeMobileMenu}>
+                             Profile
+                          </Link>
+                      </li>
+                      <li className ='nav-item none'>
+                          <Link to ='/signin'  className ='nav-links' onClick={closeMobileMenu}>
+                             Sign out
+                          </Link>
+                      </li>
+                       <li className ='nav-item dropdown' onClick={toggle}>
+                          <span to ='/viewprofile/:id' className ='nav-links ' onClick={closeMobileMenu}>
+                               John
+                              <img src="/Images/John.webp" alt="avatar" width={40} height={40}/>
+                          </span>
+
+                      </li> 
                        <li className ='nav-item dropdown' onClick={toggle}>
                           {/* <span to ='/' className ='nav-links ' onClick={closeMobileMenu}>
                               {user && user.firstName }
                               <img src="/Images/John.webp" alt="avatar" className ='mx-2' width={40} height={40}/>
                           </span> */}
+
                       </li>
                     
                   </ul>
