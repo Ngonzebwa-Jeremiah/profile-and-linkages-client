@@ -6,7 +6,7 @@ export function UpLoadProfileImage() {
     return (
       <div style = {{ margin:"1px auto"}} className="w-50 d-flex justify-content-start align-items-center flex-column ">
       <div  className="avatar">
-                      <img src="/Images/John.webp" sx={{ width: 76, height: 76 }} alt="User" />
+                      <img src="/Images/John.webp" sx={{ width: 76, height: 76 }} alt="A head shot of john" />
                       </div>
       
                   <div className="d-flex justify-content-start align-items-center">

@@ -1,5 +1,5 @@
 import React from 'react'
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "./Button.css";
 
 
@@ -27,6 +27,20 @@ export function ButtonOutlined(props) {
                 </button>
             
             </a>
+        </div>
+    )
+}
+export function ButtonOutlinedInternal(props) {
+    return (
+        <div className="buttonOutlined"onClick={props.onClick}>
+             <Link to={props.url}  style={{textDecoration:"none"}}>
+           
+                <button>
+          
+                {props.text}
+                </button>
+            
+            </Link>
         </div>
     )
 }
