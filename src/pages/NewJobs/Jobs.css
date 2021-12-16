@@ -60,3 +60,18 @@ p{
 .deadline{
     color: #2980B9;
 }
+.Job-id{
+    width:80%;
+     margin: auto ;
+     padding: 3rem
+}
+span{
+    padding: 0 2rem 0rem 0;
+}
+
+@media screen and (max-width: 960px) {
+    .Job-id{
+         margin: auto ;
+         padding: 1.4rem .4rem .2rem
+    }
+}

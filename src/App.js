@@ -12,8 +12,8 @@ import CreateProfile from "./pages/CreateProfile/CreateProfile"
 import Profile from "./pages/Profile/Profile";
 import Footer from "./components/Footer/Footer";
 import './App.css';
-import Jobid from "./pages/Jobid/Jobid";
 import Jobs from "./pages/NewJobs/Jobs";
+import JobId from "./pages/NewJob-id/JobId";
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
         <Route path="*" element={ <Error/>} />
         <Route path="/createprofile" element={<CreateProfile/>} />
         <Route path="/profile" element={<Profile/>} />
-         <Route path="/jobs/:id" element={<Jobid/>}/>
+         <Route path="/jobs/:id" element={<JobId/>}/>
       </Routes>
       <Footer/>
     </div>
