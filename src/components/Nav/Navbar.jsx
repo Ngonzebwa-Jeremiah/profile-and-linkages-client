@@ -49,8 +49,18 @@ console.log(button);
                              Create Profile
                           </Link>
                       </li>
+                      <li className ='nav-item none' >
+                          <Link to ='/viewprofile/:id' className ='nav-links' onClick={closeMobileMenu}>
+                             Profile
+                          </Link>
+                      </li>
+                      <li className ='nav-item none'>
+                          <Link to ='/signin'  className ='nav-links' onClick={closeMobileMenu}>
+                             Sign out
+                          </Link>
+                      </li>
                        <li className ='nav-item dropdown' onClick={toggle}>
-                          <span to ='/' className ='nav-links ' onClick={closeMobileMenu}>
+                          <span to ='/viewprofile/:id' className ='nav-links ' onClick={closeMobileMenu}>
                                John
                               <img src="/Images/John.webp" alt="avatar" width={40} height={40}/>
                           </span>

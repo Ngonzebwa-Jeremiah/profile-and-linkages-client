@@ -74,4 +74,7 @@ span{
          margin: auto ;
          padding: 1.4rem .4rem .2rem
     }
+    .search{
+        width: 70%;
+    }
 }
