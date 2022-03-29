@@ -1,0 +1,161 @@
+
+.main-section {
+  padding: 0;
+  position: relative;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    max-width: 1128px;
+}
+
+.pr-\[42px\] {
+  padding-right: 42px;
+}
+.self-start {
+  align-self: flex-start;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+.w-\[55\%\] {
+  width: 55%;
+}
+.relative {
+  position: relative;
+}
+
+.main-heading{
+    font-weight: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+    'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 50px;
+    font-weight:200;
+}
+.text-copper-70 {
+  color: #b8860b;
+}
+h1 , .larger-header{
+    font-weight:400;
+    font-size:3rem;
+    line-height:1.2;
+    color:rgba(0,0 ,0 ,0.9 );
+    margin: 20px;
+}
+.mb-hero-content {
+  --hero-content-bottom-margin-bottom: 42px;
+  margin-bottom: var(--hero-content-bottom-margin);
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+.h-auto {
+  height: auto;
+}
+.flex{
+    display:flex;
+}
+.w-full{
+    width:100%;
+}
+ul , ol{
+    list-style:none;
+}
+
+.w-\[16px\] {
+  margin-bottom: 16px;
+}
+li{
+    text-align: left;
+}
+.etta-btn:link{
+    display: flex;
+    text-decoration:none;
+    min-height: 56px;
+    width: 408px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    font-family: -applesystem, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+    'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: rgba(0,0 ,0 ,0.9 );
+
+}
+.big-white{
+    background-color: #fff;
+}
+.container-lined{
+    border-radius:8px;
+    border-width:3px;
+    border-style:solid;
+    border-color:rgba(0,0 ,0 ,0.08 );
+    background-color: #fff;
+}
+
+Link , Link:focus , Link:hover{
+    color: #0a66c2;
+}
+
+Link{
+    text-decoration:none;
+    font-weight: 500;
+    background-color: transparent;
+    border: 0;
+    color: #0073b1;
+    margin: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.flex-shrink{
+    flex-shrink:1;
+}
+.w-\[700px\] {
+  width: 700px;
+}
+.h-\[560px\] {
+  height: 500px;
+}
+.block{
+    display:block;
+}
+.z-\[-1\]{
+    z-index:-1;
+}
+.relative{
+    position:relative;
+}
+
+@media (max-width:767px){
+    .babybear\:w-\[374px\]{
+        width:374px;
+    }
+    .babybear\:h-\[214px\]{
+        height:214px;
+    }
+    .babybear\:static{
+        position:static;
+    }
+}
+
+@media screen and (max-width: 767px) {
+  .babybear\:pr-\[0px\] {
+    padding-right: 0px;
+  }
+  .babybear\:w-full {
+    width: 100%;
+  }
+}
+
+
+    
