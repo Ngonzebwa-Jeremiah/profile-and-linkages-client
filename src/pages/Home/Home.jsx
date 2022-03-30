@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
+import Hero from "../../components/hero2/Hero";
 function Home() {
   return (
+    <>
     <div className="main-section">
       <div className="self-start relative flex-shrink-0 w-[55%] pr-[42px] babybear:w-full babybear:pr-[0px]">
         <h1 className="main-heading text-copper-70 babybear:pb-[24px]">
@@ -76,6 +78,8 @@ function Home() {
       block z-[-1] w-[700px] h-[560px] relative flex-shrink
       babybear:w-[374px] babybear:h-[214px] babybear:static"/>
     </div>
+    <Hero />
+    </>
   );
 }
 

@@ -69,7 +69,7 @@ fetch(`${Urls.baseUrl}/api/v1/auth/signup`, {
           Sign up
         </span>
         <form onSubmit={submit}>
-          <div className="mb-2 d-flex flex-column">
+          {/* <div className="mb-2 d-flex flex-column">
             <label className="form-label text-start  w-100">First Name</label>
             <input
               type="text"
@@ -78,9 +78,9 @@ fetch(`${Urls.baseUrl}/api/v1/auth/signup`, {
               className="form-control"
               required
             />
-          </div>
+          </div> */}
           <div className=" d-flex flex-column mb-2">
-            <label className="form-label text-start  w-100">Last Name</label>
+            <label className="form-label text-start  w-100">Full Name</label>
             <input
               type="text"
               name="lastName"
