@@ -1,69 +1,85 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+import { registerUser, loginUser } from "../../Services/authService";
+
+const user = JSON.parse(localStorage.getItem("user"));
 
 const initialState = {
-  user: null,
+  user: user ? user : null,
+  isError: false,
+  isSuccess: false,
   isLoading: false,
-  isSucess: false,
-  error: null,
+  errorMessage: "",
 };
 
-const registerSlice = createSlice({
-  name: "register",
+export const registerSlice = createSlice({
+  name: "auth",
   initialState,
   reducers: {
-    registerRequest: (state) => {
-      state.isLoading = true;
-      state.error = null;
-    },
-    registerSuccess: (state, action) => {
-      state.isLoading = false;
-      state.isSucess = true;
-      state.user = action.payload;
-    },
-    registerFailure: (state, action) => {
-      state.isLoading = false;
-      state.isSucess = false;
-      state.error = action.payload;
-    },
     reset: (state) => {
+      state.isError = false;
+      state.isSuccess = false;
       state.isLoading = false;
-      state.isSucess = false;
-      state.error = null;
+      state.errorMessage = "";
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(registerUserAsync.pending, (state, action) => {
+      state.isLoading = true;
+    });
+    builder.addCase(registerUserAsync.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.isSuccess = true;
+      state.user = action.payload;
+    });
+    builder.addCase(registerUserAsync.rejected, (state, action) => {
+      state.isLoading = false;
+      state.isError = true;
+      state.errorMessage = action.payload;
+    });
+
+    builder.addCase(loginUserAsync.pending, (state, action) => {
+      state.isLoading = true;
+    });
+    builder.addCase(loginUserAsync.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.isSuccess = true;
+      state.user = action.payload;
+    });
+    builder.addCase(loginUserAsync.rejected, (state, action) => {
+      state.isLoading = false;
+      state.isError = true;
+      state.errorMessage = action.payload;
+    });
   },
 });
 
-export const { reset, registerRequest, registerFailure, registerSuccess } = registerSlice.actions;
+export const registerUserAsync = createAsyncThunk(
+  "auth/registerUser",
+  async (payload, thunkAPI) => {
+    try {
+      return await registerUser(payload);
+    } catch (error) {
+      const message = error.message;
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
 
-export const registerSelector = (state) => state.register;
+export const loginUserAsync = createAsyncThunk(
+  "auth/loginUser",
+  async (payload, thunkAPI) => {
+    try {
+      return await loginUser(payload);
+    } catch (error) {
+      const message = error.message;
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
 
-export const registerUser = (userdata) => (dispatch) => {
-  dispatch(registerRequest());
-  return fetch(process.env.REACT_APP_API_URL + "/auth/register", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(userdata),
-  })
-    .then((response) => {
-      if (response.status === 400) {
-        return dispatch(registerFailure("Email already exists"));
-      }
+export const { reset } = registerSlice.actions;
 
-      if (response.status === 404) {
-        return dispatch(registerFailure("Invalid email or password"));
-      }
-
-      return response.json();
-    })
-    .then((user) => {
-      localStorage.setItem("access_token", user.token);
-      dispatch(registerSuccess(user));
-    })
-    .catch((error) => {
-      dispatch(registerFailure(error));
-    });
-};
+export const authSelector = (state) => state.auth;
 
 export default registerSlice.reducer;

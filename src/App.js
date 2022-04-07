@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
 import Error from "./pages/404/Error";
@@ -21,6 +21,7 @@ import JobId from "./pages/NewJob-id/JobId";
 
 function App() {
   return (
+    <Router>
     <div className="App">
       <Nav/>
       <Routes>
@@ -46,6 +47,7 @@ function App() {
       </Routes>
       <Footer/>
     </div>
+    </Router>
   );
 }
 
